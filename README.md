@@ -50,6 +50,15 @@ Authenticate the CLI to the cloud:
   
 * [Azure az](https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?source=recommendations#how-to-sign-into-the-azure-cli)
 
+## Creating a model repository in Amazon S3 or Azure storage
+
+These example scripts assume that a model repository exists in cloud storage. See [this page](https://github.com/triton-inference-server/server/blob/main/docs/user_guide/model_repository.md) for information on setting up a model repository.
+
+The AWS deployment script will assume a model repository in s3, and the Azure deployment script will assume a model repository in Azure blob storage.
+The model repository path must be set in the *terraform.tfvars* file.
+
+The *build-triton-server.sh* script will prompt for any key values needed to access the cloud storage.
+
 ## Running the cloud scripts
 
 ### Ensure ssh Keys Exist
