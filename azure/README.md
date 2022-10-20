@@ -1,10 +1,10 @@
 # AZURE
-A collection of scripts and resources to spin-up Azure cuOpt instances
+A collection of scripts and resources to spin-up Azure Triton instances
 
 ## Resource groups
 
-All of the Azure infrastructure for the cuOpt server is created in
-a resource group with the prefix "cuopt".  This resource group
+All of the Azure infrastructure for the Triton server is created in
+a resource group with the prefix "triton".  This resource group
 is displayed in the output from the Terraform script.
 
 The Azure script creates a new VPC in the resoure group.
@@ -18,7 +18,7 @@ resource_group_location = "westus"
 
 The admin user on the instance can be changed in *terraform.tfvars* (default azureuser)
 ```bash
-user = cuopt-user
+user = myuser
 ```
 
 ## Setting the OS image
