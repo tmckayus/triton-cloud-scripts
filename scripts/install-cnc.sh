@@ -20,15 +20,15 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 # DEALINGS IN THE SOFTWARE.
-
-git clone https://github.com/NVIDIA/cloud-native-core
-cd cloud-native-core/playbooks
-git checkout 24b8bb23fc8fc8bae0d88c8d6f23169204c4b8cc
+sudo apt update -y
+git clone https://github.com/NVIDIA/cloud-native-stack
+cd cloud-native-stack/playbooks
+git checkout 34057d17252bf88ffe49eb4d623cdce026af06ce
 cat << EOF > hosts
 [master]
 localhost ansible_connection=local
 EOF
-
-sed -i 's,docs.projectcalico.org/v3.23/manifests/calico.yaml,docs.projectcalico.org/manifests/calico.yaml,g' *.yaml
-set -x
+cat << EOF > cnc_version.yaml
+cnc_version: 8.0
+EOF
 ./setup.sh install
